@@ -20,6 +20,10 @@ public class Server {
         PrintWriter outServer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socClient.getOutputStream())), true);
 
         // todo: implement the scenario
+        String param =inServer.readLine();
+        System.out.println(param);
+        String res = param.replaceAll("[aeiouyAEIOUY]", "");
+        outServer.println(res);
 
         // Close in / out
         inServer.close();
